@@ -36,7 +36,22 @@ def build_url(params: dict) -> str:
 @mcp.tool()
 async def openmeteo_forecast(latitude: float, longitude: float, hourly: List[str], timezone: str = "auto",
                              start_date: Optional[str] = None, end_date: Optional[str] = None, past_days: Optional[int] = None):
-    """Get weather forecast data from Open-Meteo API"""
+    """
+        Get weather forecast data from the Open-Meteo API.
+
+        Parameters:
+        - latitude (float): Geographic latitude (-90 to 90)
+        - longitude (float): Geographic longitude (-180 to 180)
+        - hourly (List[str]): List of weather parameters to request (e.g., temperature_2m)
+        - timezone (str): Timezone for data output (default: 'auto')
+        - start_date (str, optional): Start date in 'YYYY-MM-DD' format
+        - end_date (str, optional): End date in 'YYYY-MM-DD' format
+        - past_days (int, optional): Number of past days to include
+
+        Returns:
+        - JSON response from Open-Meteo API if successful
+        - Error message dictionary if validation or API call fails
+    """
     try:
         inputs = ForecastInput(
             latitude=latitude, longitude=longitude, hourly=hourly,
