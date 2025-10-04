@@ -18,8 +18,9 @@ pytest -v
 follow https://modelcontextprotocol.io/docs/develop/build-server and edit necessary parts
 
 ## example request prompt
-```Get the hourly **temperature** and **windspeed** for Berlin for today and tomorrow in the local timezone.
-```
+
+Get the hourly **temperature** and **windspeed** for Berlin for today and tomorrow in the local timezone.
+
 
 
 ## Shortage
